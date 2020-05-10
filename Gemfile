@@ -29,6 +29,12 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
+  # Use capybara for feature tests
+  gem 'capybara'
+  # Use `rspec` for testing
+  gem 'rspec-rails'
+  # Use `factory_bot` for testing factories
+  gem 'factory_bot_rails'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
