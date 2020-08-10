@@ -12,10 +12,13 @@
   </tr>
 
   <% @process_runs.each do |process_run| %>
-    <tr>
+    <tr
+      data-controller="process-run-row"
+      data-record-id="<%= process_run.id %>"
+    >
       <td><%= process_run.id %></td>
       <td><%= process_run.created_at.to_s(:long) %></td>
-      <td><%= process_run.status %></td>
+      <td data-target="process-run-row.statusCol"><%= process_run.status %></td>
     </tr>
   <% end %>
 </table>
