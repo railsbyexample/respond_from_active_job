@@ -1,0 +1,15 @@
+class ProcessRunsController < ApplicationController
+  def create
+    10.times { ProcessRun.create! }
+    redirect_to process_runs_url
+  end
+
+  def index
+    @process_runs = ProcessRun.all.order(created_at: :desc).page(params[:page])
+  end
+
+  def show
+    process_run = ProcessRun.find(params[:id])
+    render json: { status: process_run.status }, status: :ok
+  end
+end

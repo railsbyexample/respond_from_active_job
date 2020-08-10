@@ -1,0 +1,19 @@
+<h1>All Runs</h1>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Created at</th>
+    <th>Status</th>
+  </tr>
+
+  <% @process_runs.each do |process_run| %>
+    <tr>
+      <td><%= process_run.id %></td>
+      <td><%= process_run.created_at.to_s(:long) %></td>
+      <td><%= process_run.status %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= paginate @process_runs %>

@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :process_runs, only: %i[index create show]
+
+  root to: redirect('/process_runs')
 end
