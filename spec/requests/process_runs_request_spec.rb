@@ -12,6 +12,12 @@ RSpec.describe 'ProcessRuns', type: :request do
         post '/process_runs'
       end.to change(ProcessRun, :count).by(10)
     end
+
+    it 'dispatches `ProcessRun` jobs' do
+      expect do
+        post '/process_runs'
+      end.to have_enqueued_job(ProcessRunJob).exactly(10).times
+    end
   end
 
   describe 'GET /process_runs' do

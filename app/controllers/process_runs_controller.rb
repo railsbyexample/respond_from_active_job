@@ -1,6 +1,10 @@
 class ProcessRunsController < ApplicationController
   def create
-    10.times { ProcessRun.create! }
+    10.times do
+      process_run = ProcessRun.create!
+      ProcessRunJob.perform_later process_run
+    end
+
     redirect_to process_runs_url
   end
 
