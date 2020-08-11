@@ -2,6 +2,8 @@
 
 Using `ActiveJob`, `ActionCable` and `StimulusJS`
 
+Check out [the sample](https://rails-respond-from-active-job.herokuapp.com)
+
 ## Motivation
 
 Often you want to offload long running tasks to an asynchronous job but you also need to update the UI as soon as possible, without having the user refresh the whole page.
