@@ -14,6 +14,6 @@ class ProcessRun < ApplicationRecord
   private
 
   def mock_delay
-    sleep(rand(2..4)) unless Rails.env.test?
+    sleep(rand(2..4)) if Rails.env.development?
   end
 end
