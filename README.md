@@ -20,6 +20,8 @@ The long running "process runs" are achieved with a call to `sleep` with a rando
 
 The job (`ProcessRunJob`) broadcasts the status changes using `ActionCable`:
 
+Check out [the sample](https://rails-respond-from-active-job.herokuapp.com).
+
 ```ruby
 # app/jobs/process_run_job.rb
 
